@@ -14,24 +14,36 @@ const ingredients = [
   'Condiments',
 ];
 
-ingredients.forEach(item => {
-  console.log(item)
-  // const itemRef = ingredient.querySelector('li')
-//   const itemEl = document.createElement('li');
-//  itemEl.classList.add('item');
-// itemEl.textContent = ingredient;
+// ingredients.forEach(item => {
+//   console.log(item)
+//   // const itemRef = ingredient.querySelector('li')
+// //   const itemEl = document.createElement('li');
+// //  itemEl.classList.add('item');
+// // itemEl.textContent = ingredient;
  
   
-//   let ingredientsEl = document.querySelector('ul#ingredients')
+// //   let ingredientsEl = document.querySelector('ul#ingredients')
  
-//   ingredientsEl.appendChild(itemEl)
-  //  console.log(ingredientsEl.children)
-  // console.log(itemRef)
+// //   ingredientsEl.appendChild(itemEl)
+//   //  console.log(ingredientsEl.children)
+//   // console.log(itemRef)
+// });
+
+const ingredientsEl = document.querySelector("#ingredients");
+
+console.log(ingredientsEl);
+console.log(ingredients);
+
+const listRefs = ingredients.map((ingredient) => {
+  const listRef = document.createElement("li");
+  listRef.textContent = ingredient;
+  listRef.classList.add("item");
+  return listRef;
 });
 
-
+ingredientsEl.append(...listRefs);
  
-//   
+ 
   
 
 

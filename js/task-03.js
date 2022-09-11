@@ -13,13 +13,34 @@ const images = [
   },
 ];
 
-const listRef = document.querySelector('.gallery');
-console.log(listRef);
-const makeGalerryEL = (image) => {
-  const { url, alt } = image;
-  return `<li class = “gallery-item”><img src = “${url}“alt = “${alt}” width = “150" height = “200"/> </li>`;
-};
-const makeGallerryList = images.map(makeGalerryEL).join(' ');
-console.log(makeGallerryList);
-listRef.insertAdjacentHTML('beforeend', makeGallerryList);
-console.log(makeGallerryList);
+// const listRef = document.querySelector('.gallery');
+
+// const makeGalerryEL = (image) => {
+//   const { url, alt } = image;
+//   return `<li class = “gallery-item”><img src = “${url}“alt = “${alt}” width = “150" height = “200"/> </li>`;
+// };
+// const makeGallerryList = images.map(makeGalerryEL).join(' ');
+
+// listRef.insertAdjacentHTML('beforeend', makeGallerryList);
+// console.log(makeGallerryList);
+
+
+const galleryListEl = document.querySelector("ul");
+const element = images
+  .map(function ({ url, alt }) {
+    return `<li><img src = '${url}' alt = '${alt}' width="320"></li>`;
+  })
+  .join(" ");
+galleryListEl.insertAdjacentHTML("afterbegin", element);
+console.log(galleryListEl)
+document.body.style.margin = '0px';
+
+
+galleryListEl.style.cssText = `
+// display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  margin: 10;
+  padding: 10;
+  `;
